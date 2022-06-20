@@ -1,0 +1,61 @@
+/* CSS Document */
+* {
+  box-sizing: border-box;
+}
+h1 {
+    /*android green*/
+    color: #B6C649;
+    font-weight: lighter;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    letter-spacing: .2rem;
+    text-align: center;
+	font-size: 50px;
+}
+
+h2{
+	color: #7A9AB1;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    letter-spacing: .2rem;
+}
+h3 {
+	color: #d16666;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    letter-spacing: .2rem;
+    text-align: center;
+}
+p {
+	color: white;
+	padding: 20px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-weight: lighter;
+	letter-spacing:.1rem;
+}
+body {
+    background: #2c4251;	
+}.major {
+}
+iframe {
+	display:block;
+}
+.column {
+  float: left;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.project {
+	margin: auto;
+}
