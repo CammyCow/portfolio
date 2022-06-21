@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Camille Kao Portfolio</title>
+<link rel="stylesheet" type="text/css" href="style/home.css">
+<link href="style/navBar.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	
+</head>
+
+<body>
+	<header class="major">
+		<div id="nav-placeholder"></div>
+		<script>
+		$(function(){
+			$("#nav-placeholder").load("templates/navBar.html");
+		});
+		</script>
+		<h1> Camille Kao</h1>
+		<h3> Welcome to my portfolio website! </h3>
+	</header>
+	
+	<div class="row">
+		<div class="column left">
+			<h2>About Me</h2>
+			<div class = "sideContent">
+				<p>I am a Junior at Rice University pursuing a BS in computer science. In addition to coding, I like to 
+					do photography and videography on the side. 
+				</p>
+			</div>
+			
+
+		</div>
+		<div class="column right">
+			<h2>Projects</h2>
+				<div class = "project">
+					<h3>ChatApp</h3>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/swDW9XLyuC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+					<p>
+					Java application that allows users to create a chatroom, invite others into the chatroom, send messages, send custom messages, and leave a chatroom. See above video for demo.
+					</p>
+				</div>
+
+  		</div>
+	</div>
+
+</body>
+</html>
