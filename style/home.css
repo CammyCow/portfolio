@@ -24,10 +24,10 @@ h3 {
     text-align: center;
 }
 p {
-	color: white;
+	color: inherit;
 	padding: 20px;
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-	font-weight: lighter;
+	font-weight: normal;
 	letter-spacing:.1rem;
 }
 body {
@@ -36,6 +36,8 @@ body {
 }
 iframe {
 	display:block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .column {
   float: left;
@@ -44,18 +46,28 @@ iframe {
 }
 
 .left {
-  width: 25%;
+  	width: 25%;
+	border-radius: 25px;
 }
 
 .right {
   width: 75%;
 }
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+	content: "";
+	display: table;
+	clear: both;
+
 }
 
 .project {
 	margin: auto;
+	background: #B6C649;
+	padding: 10px;
+	color: #2c4251;	
+}
+
+.sideContent {
+	background: #d16666;
+	color: white;
 }
