@@ -42,6 +42,8 @@
 					<h3>ChatApp</h3>
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/swDW9XLyuC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<h4>API Overview</h4>
+					<p>ChatApp has two levels of communication: a "Discovery Level" and a "Room Level". The Discovery Level of communication enables users to create chat rooms and view other chat rooms. The Room Level enables p2p communications between members of a chat room</p>
+					<h5>Discovery Level API</h5>
 						<style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -55,7 +57,7 @@
 <thead>
   <tr>
     <th class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IConnectionMsg</span></th>
-    <th class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The supertype of all other messages on this level. </span></th>
+    <th class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The super type of all other connection level messages. Defining IConnectionMsg enhances type safety because one can specify IConnection to only receive messages of the IConnectionMsg type. Usually not directly used. </span></th>
     <th class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></th>
   </tr>
   <tr>
@@ -65,7 +67,7 @@
 <tbody>
   <tr>
     <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IInviteMsg</span></td>
-    <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">An invite message that enables a user to join a game’s room. </span></td>
+    <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">An invite message type that enables one ChatApp to invite another ChatApp to its chat rooms. </span></td>
     <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
   </tr>
   <tr>
@@ -76,7 +78,7 @@
   </tr>
   <tr>
     <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IQuitMsg</span></td>
-    <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A quit message to notify that the user is quitting their app. </span></td>
+    <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A quit message type to notify other ChatApps that this ChatApp got terminated.</span></td>
     <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
   </tr>
   <tr>
@@ -122,6 +124,89 @@
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IInitialConnection</span></td>
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The initial stub that is retrieved from the registry. Needs to call getNamedConnection to get the serializable object that contains the connection stub. </span></td>
     <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public INamedConnection getNamedConnection()</span></td>
+  </tr>
+</tbody>
+</table>
+					<h5>Room Level API</h5>
+					<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-gl4h{background-color:#D9EAD3;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-r8bx{background-color:#88A5D7;border-color:inherit;color:#FFF;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-r8bx"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#FFF;background-color:transparent">Interface/Class Name</span></th>
+    <th class="tg-r8bx"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#FFF;background-color:transparent">Description</span></th>
+    <th class="tg-r8bx"><span style="font-weight:700;font-style:normal;text-decoration:none;color:#FFF;background-color:transparent">Methods</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">ICommunicationMsg</span></td>
+    <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The super type of all messages within a room. </span></td>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public default IDataPacketID getID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IRequestCmdMsg</span></td>
+    <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The message type used for requesting a command from a sender. </span></td>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public default IDataPacketID getID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public IDataPacketID getUnknownMsgPacketID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">ISendCmdMsg</span></td>
+    <td class="tg-gl4h" rowspan="4"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The message type that contains an algo command. Usually used upon receiving an IRequestCmdMsg. </span></td>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public default IDataPacketID getID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public AMessageDataPacketAlgoCmd&lt;? extends ICommunicationMsg&gt; getCmd()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public IDataPacketID getCmdID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">AMessageDataPacketAlgoCmd</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A type-narrowed ADataPacketAlgoCmd that has void return type, void parameter type, and ICmd2ModelAdapter as the adapter type. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">-</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">MessageDataPacket</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A type-narrowed DataPacket where the sender type is IMessageReceiver. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">-</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">MessageDataPacketAlgo</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Concrete visitor for processing a message data packet. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">-</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IMessageReceiver</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The underlying remote stub of INamedMessageReceiver. This is the actual receiver of messages. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public void receiveMessage(MessageDataPacket&lt;? extends ICommunicationMsg&gt; packet)</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">INamedMessageReceiver</span></td>
+    <td class="tg-0pky" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A wrapper (dyad) of IMessageReceiver together with its name. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public String getName()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public IMessageReceiver  getMessageReceiverStub()</span></td>
   </tr>
 </tbody>
 </table>
