@@ -29,6 +29,11 @@ h4 {
     letter-spacing: .2rem;
     text-align: center;
 }
+h5{
+	color: #7A9AB1;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    letter-spacing: .2rem;
+}
 p {
 	color: inherit;
 	padding: 20px;
