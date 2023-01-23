@@ -41,14 +41,101 @@
 				<div class = "project">
 					<h3>ChatApp</h3>
 					<iframe width="560" height="315" src="https://www.youtube.com/embed/swDW9XLyuC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+					<h4>API Overview</h4>
+						<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-gl4h{background-color:#D9EAD3;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IConnectionMsg</span></th>
+    <th class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The supertype of all other messages on this level. </span></th>
+    <th class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></th>
+  </tr>
+  <tr>
+    <th class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public default IDataPacketID getID()</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IInviteMsg</span></td>
+    <td class="tg-gl4h" rowspan="3"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">An invite message that enables a user to join a game’s room. </span></td>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public default IDataPacketID getID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public Set&lt;IRoom&gt; getRooms()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IQuitMsg</span></td>
+    <td class="tg-gl4h" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A quit message to notify that the user is quitting their app. </span></td>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public static IDataPacketID GetID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gl4h"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public default IDataPacketID getID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">AConnectionDataPacketAlgoCmd</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A type-narrowed ADataPacketAlgoCmd that has a void return type, void parameter type, and ICmd2ModelAdapter as the adapter type. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">-</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">ConnectionDataPacket</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A type-narrowed DataPacket where the sender type is IConnection. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">-</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">ConnectionDataPacketAlgo</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Concrete visitor for processing a connection data packet. Type-narrowed DataPacketAlgo with void parameter and return type. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">-</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IRoom</span></td>
+    <td class="tg-0pky" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A dyad that contains the friendly name of a room and its UUID. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public String getRoomName()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public UUID getRoomID()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IConnection</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The underlying remote stub of INamedConnection. This is the actual receiver of messages. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public void receiveMessage(ConnectionDataPacket&lt;? extends IConnectionMsg&gt; packet)</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">INamedConnection</span></td>
+    <td class="tg-0pky" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A wrapper (dyad) of IConnection together with its name. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public String getName()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public IConnection getConnectionStub()</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">IInitialConnection</span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">The initial stub that is retrieved from the registry. Needs to call getNamedConnection to get the serializable object that contains the connection stub. </span></td>
+    <td class="tg-0pky"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">public INamedConnection getNamedConnection()</span></td>
+  </tr>
+</tbody>
+</table>
+					<h4>Connecting</h4>
 					<p>
-					Java application that allows users to remotely create chatrooms and message other users. 
-						The first connection to the "Discovery Server" allows an individual's ip to be easily discoverable by other users. The second connection is to
-						individual people, in which connection stubs are exchanged to allow messaging.
-						Features "auto-connect-back", which allows a newly connected user to receive all the connection stubs of a user with pre-existing user connections.
-						The ChatApp API also allows the creation of custom messages that can take advantage of Java Swing elements, such as button creation. See demo video above.
+						
+						Java application that allows users to remotely create chatrooms and message other users. 
+						Upon launch, establishes a connection to a PubSub server, labelled as "Discovery Server" in this project, which allows an individual's ip to be easily discoverable by other users. Upon selecting an user,
+						a direct connection is established and connection stubs are exchanged to allow messaging.
+						An "auto-connect-back" feature allows a newly connected user to receive all the connection stubs of a user with pre-existing user connections.
+						
 					</p>
+					<h4>Custom Messaging</h4>
+					<p>The ChatApp API also allows the creation of custom messages that can take advantage of Java Swing elements, such as button creation. See demo video above. </p>
 				</div>
 
   		</div>
