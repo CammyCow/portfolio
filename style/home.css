@@ -2,9 +2,20 @@
 * {
   box-sizing: border-box;
 }
+
+:root {
+	--primary-color: #3185fc;
+	--secondary-color: #f9dc5c;
+	--font-color: #fff;
+	--bg-color: #403f4c;
+	--heading-color: #e84855;
+	--sub-bg-color:#4e4d5c;
+	--side-bg-color: #54536d;
+    }
+
 h1 {
     /*android green*/
-    color: #B6C649;
+    color: var(--primary-color);
     font-weight: lighter;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     letter-spacing: .2rem;
@@ -13,12 +24,12 @@ h1 {
 }
 
 h2{
-	color: #7A9AB1;
+	color: var(--heading-color);
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     letter-spacing: .2rem;
 }
 h3 {
-	color: #d16666;
+	color: var(--secondary-color);
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     letter-spacing: .2rem;
     text-align: center;
@@ -42,7 +53,7 @@ p {
 	letter-spacing:.1rem;
 }
 body {
-    background: #2c4251;	
+    background: var(--bg-color);	
 }.major {
 }
 iframe {
@@ -81,13 +92,13 @@ li {
 
 .project {
 	margin: auto;
-	background: #B6C649;
+	background: var(--sub-bg-color);
 	padding: 10px;
-	color: #2c4251;	
+	color: var(--font-color);	
 }
 
 .sideContent {
-	background: #d16666;
-	color: white;
+	background: var(--side-bg-color);
+	color: var(--font-color);
 	padding-bottom: 10px;
 }
