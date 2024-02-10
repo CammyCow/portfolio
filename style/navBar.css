@@ -4,20 +4,27 @@ ul {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: #e84855;
+	background-color: #C6AC8F;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
 	width: 100%;
 }
 
-li {
+#header li {
   float: left;
+}
+
+#projects li {
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 0px;
 }
 
 li a {
     display: block;
-    color: #fff;
+    color: #5E503F;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -26,7 +33,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-	color: #e84855;
-	background-color: #fff;
+	color: #EAE0D5;
+	background-color: #22333B;
 }
 

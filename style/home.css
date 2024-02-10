@@ -4,19 +4,19 @@
 }
 
 :root {
-	--primary-color: #3185fc;
-	--secondary-color: #f9dc5c;
-	--font-color: #fff;
-	--bg-color: #403f4c;
-	--heading-color: #e84855;
-	--sub-bg-color:#4e4d5c;
-	--side-bg-color: #54536d;
+	--primary-color: #5E503F;
+	--secondary-color: #22333B;
+	--font-color: #0A0908;
+	--bg-color: #EAE0D5;
+	--heading-color: #0A0908;
+	--sub-bg-color: #EAE0D5;
+	--side-bg-color: #EAE0D5;
     }
 
 h1 {
     /*android green*/
     color: var(--primary-color);
-    font-weight: lighter;
+    font-weight: bolder;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     letter-spacing: .2rem;
     text-align: center;
@@ -30,12 +30,13 @@ h2{
 }
 h3 {
 	color: var(--secondary-color);
+	font-weight: lighter;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     letter-spacing: .2rem;
     text-align: center;
 }
 h4 {
-	color: #d16666;
+	color: var(--secondary-color);
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     letter-spacing: .2rem;
     text-align: center;
@@ -47,7 +48,7 @@ h5{
 }
 p {
 	color: inherit;
-	padding: 20px;
+	padding: 14px;
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
 	font-weight: normal;
 	letter-spacing:.1rem;

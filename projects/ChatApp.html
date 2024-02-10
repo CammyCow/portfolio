@@ -1,0 +1,27 @@
+<div class = "project">
+	<h3>ChatApp</h3>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/swDW9XLyuC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h4>API Overview</h4>
+	<p>ChatApp has two levels of communication: a "Discovery Level" and a "Room Level". The Discovery Level of communication enables users to create chat rooms and view other chat rooms. The Room Level enables p2p communications between members of a chat room</p>
+	<h5>Discovery Level API</h5>
+		<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:white;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-gl4h{background-color:#D9EAD3;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+	<h4>Connecting</h4>
+	<p>
+		
+		Java application that allows users to remotely create chatrooms and message other users. 
+		Upon launch, establishes a connection to a PubSub server, labelled as "Discovery Server" in this project, which allows an individual's ip to be easily discoverable by other users. Upon selecting an user,
+		a direct connection is established and connection stubs are exchanged to allow messaging.
+		An "auto-connect-back" feature allows a newly connected user to receive all the connection stubs of a user with pre-existing user connections.
+		
+	</p>
+	<h4>Custom Messaging</h4>
+	<p>The ChatApp API also allows the creation of custom messages that can take advantage of Java Swing elements, such as button creation. See demo video above. </p>
+</div>
