@@ -7,9 +7,9 @@
 	--primary-color: #5E503F;
 	--secondary-color: #22333B;
 	--font-color: #0A0908;
-	--bg-color: #EAE0D5;
-	--heading-color: #0A0908;
-	--sub-bg-color: #EAE0D5;
+	--bg-color: #B0C4B1;
+	--heading-color: #283618;
+	--sub-bg-color: #EDAFB8;
 	--side-bg-color: #EAE0D5;
     }
 
@@ -55,7 +55,6 @@ p {
 }
 body {
     background: var(--bg-color);	
-}.major {
 }
 iframe {
 	display:block;
@@ -68,11 +67,15 @@ li {
 .headerContent {
 	display: inline-block;
 	padding: 1rem 1rem;
+	align-content: center;
+}
+.float-child {
+	float: left;
+	padding: 10px;
 }
 .column {
   float: left;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 .left {
@@ -92,14 +95,16 @@ li {
 }
 
 .project {
-	margin: auto;
+	margin: 1%;
 	background: var(--sub-bg-color);
 	padding: 10px;
-	color: var(--font-color);	
+	color: var(--font-color);
 }
 
 .sideContent {
 	background: var(--side-bg-color);
 	color: var(--font-color);
 	padding-bottom: 10px;
+	padding-top: 10px;
+	margin:2%;
 }
